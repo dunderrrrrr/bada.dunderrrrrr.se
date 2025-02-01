@@ -2,7 +2,7 @@ import htpy as h
 from flask import Flask, Response
 from markupsafe import Markup
 
-from components import head_html, map_modal_html, temp_table_html
+from components import footer_html, head_html, map_modal_html, temp_table_html
 from constants import BATH_PLACES_BY_ID
 
 
@@ -19,7 +19,7 @@ def temp(id: int) -> Response:
     temperature = place.temperature
 
     if not temperature:
-        temperature = None
+        temperature = "-"
 
     return Response(temperature)
 
@@ -46,7 +46,12 @@ def index() -> Response:
                 }
             )[
                 h.div(".container-sm")[
-                    h.div(".row")[h.div(".col.pt-3")[temp_table_html()]]
+                    h.div(".row.justify-content-center")[
+                        h.div(".col-12.col-md-9.col-lg-6.pt-3")[
+                            temp_table_html(),
+                            footer_html(),
+                        ],
+                    ]
                 ],
                 h.div(
                     "#modals-here.modal.modal-blur.fade",

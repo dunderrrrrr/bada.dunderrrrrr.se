@@ -2,6 +2,7 @@ import htpy as h
 
 from constants import BATH_PLACES, BathPlace
 from markupsafe import Markup
+from flask import url_for
 
 
 def head_html() -> h.Element:
@@ -21,6 +22,7 @@ def head_html() -> h.Element:
         h.link(
             rel="stylesheet", href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         ),
+        h.link(rel="stylesheet", href=f"{url_for('static', filename='style.css')}"),
     ]
 
 
@@ -35,8 +37,8 @@ def temp_table_html() -> h.Element:
                 (
                     h.tr[
                         h.td[
-                            h.a(
-                                href="",
+                            h.span(
+                                ".place-title",
                                 hx_get=f"/map/{place.id}",
                                 hx_trigger="click",
                                 hx_target="#modals-here",
@@ -85,8 +87,22 @@ def map_modal_html(place: BathPlace) -> h.Element:
             ],
             h.div(".modal-footer")[
                 h.button(".btn.btn-secondary", type="button", data_bs_dismiss="modal")[
-                    "Close"
+                    "Stäng"
                 ]
             ],
         ]
+    ]
+
+
+def footer_html() -> h.Element:
+    return h.div(".container-fluid.text-center")[
+        h.p(".footer")[
+            "Data hämtas från ",
+            h.a(href="https://www.havochvatten.se/")["havs- och vattenmyndigheten"],
+            ".",
+        ],
+        h.hr,
+        h.p(".footer")[
+            "Att bada innebär att en kropp, vanligen människokroppen, omsluts av vatten, alternativt annan vätska eller annat medium.",
+        ],
     ]

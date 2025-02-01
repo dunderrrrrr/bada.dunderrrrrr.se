@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+
+body {
+    font-family: "Inconsolata", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+span.place-title {
+    color :#2f2f2f;
+    text-decoration: underline;
+}
+span.place-title:hover {
+    cursor: pointer;
+}
+.footer, .footer a{
+    color :#c4c4c4;
+    font-size:12px;
+}
