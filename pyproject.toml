@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "beautifulsoup4>=4.12.3",
     "flask>=3.1.0",
+    "gunicorn>=23.0.0",
     "htpy>=25.2.0",
     "httpx>=0.28.1",
 ]
