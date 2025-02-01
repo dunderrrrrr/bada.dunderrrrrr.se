@@ -35,7 +35,8 @@ def temp_table_html() -> h.Element:
                 (
                     h.tr[
                         h.td[
-                            h.span(
+                            h.a(
+                                href="",
                                 hx_get=f"/map/{place.id}",
                                 hx_trigger="click",
                                 hx_target="#modals-here",

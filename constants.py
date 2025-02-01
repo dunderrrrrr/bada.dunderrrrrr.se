@@ -55,76 +55,76 @@ BATH_PLACES = [
         title="Arkösund, Nordanskogsbadet",
         url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/arkosund-nordanskogsbadet-camping.html",
     ),
-    # BathPlace(
-    #     id=3,
-    #     title="Arkösund, Sköldvik",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/arkosund-skoldvik.html",
-    # ),
-    # BathPlace(
-    #     id=4,
-    #     title="Bolen, Bolenbadet",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/bolen-bolenbadet.html",
-    # ),
-    # BathPlace(
-    #     id=5,
-    #     title="Bråviken, Kvarsebobadet",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/braviken-kvarsebobadet.html",
-    # ),
-    # BathPlace(
-    #     id=6,
-    #     title="Böksjön, Böksjöbadet",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/boksjon-boksjobadet.html",
-    # ),
-    # BathPlace(
-    #     id=7,
-    #     title="Dalbystrand",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/dalbystrand.html",
-    # ),
-    # BathPlace(
-    #     id=8,
-    #     title="Glan, Skarsätter",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/glan-skarsatter.html",
-    # ),
-    # BathPlace(
-    #     id=9,
-    #     title="Motala ström",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/inre-hamn--motala-strom.html",
-    # ),
-    # BathPlace(
-    #     id=10,
-    #     title="Lilla Älgsjön",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/lilla-algsjon.html",
-    # ),
-    # BathPlace(
-    #     id=11,
-    #     title="Lillsjöbadet",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/lillsjobadet.html",
-    # ),
-    # BathPlace(
-    #     id=12,
-    #     title="Mårn, Mårängsbadet",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/marn-marangsbadet.html",
-    # ),
-    # BathPlace(
-    #     id=13,
-    #     title="Gransjönäsbadet",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/nedre-glottern-gransjonasbadet.html",
-    # ),
-    # BathPlace(
-    #     id=14,
-    #     title="Slätbaken, Stegeborgsgården",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/slatbaken-stegeborgsgarden.html",
-    # ),
-    # BathPlace(
-    #     id=15,
-    #     title="Sörsjöbadet",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/sorsjobadet.html",
-    # ),
-    # BathPlace(
-    #     id=16,
-    #     title="Ågelsjön",
-    #     url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/agelsjon.html",
-    # ),
+    BathPlace(
+        id=3,
+        title="Arkösund, Sköldvik",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/arkosund-skoldvik.html",
+    ),
+    BathPlace(
+        id=4,
+        title="Bolen, Bolenbadet",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/bolen-bolenbadet.html",
+    ),
+    BathPlace(
+        id=5,
+        title="Bråviken, Kvarsebobadet",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/braviken-kvarsebobadet.html",
+    ),
+    BathPlace(
+        id=6,
+        title="Böksjön, Böksjöbadet",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/boksjon-boksjobadet.html",
+    ),
+    BathPlace(
+        id=7,
+        title="Dalbystrand",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/dalbystrand.html",
+    ),
+    BathPlace(
+        id=8,
+        title="Glan, Skarsätter",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/glan-skarsatter.html",
+    ),
+    BathPlace(
+        id=9,
+        title="Motala ström",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/inre-hamn--motala-strom.html",
+    ),
+    BathPlace(
+        id=10,
+        title="Lilla Älgsjön",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/lilla-algsjon.html",
+    ),
+    BathPlace(
+        id=11,
+        title="Lillsjöbadet",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/lillsjobadet.html",
+    ),
+    BathPlace(
+        id=12,
+        title="Mårn, Mårängsbadet",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/marn-marangsbadet.html",
+    ),
+    BathPlace(
+        id=13,
+        title="Gransjönäsbadet",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/nedre-glottern-gransjonasbadet.html",
+    ),
+    BathPlace(
+        id=14,
+        title="Slätbaken, Stegeborgsgården",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/slatbaken-stegeborgsgarden.html",
+    ),
+    BathPlace(
+        id=15,
+        title="Sörsjöbadet",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/sorsjobadet.html",
+    ),
+    BathPlace(
+        id=16,
+        title="Ågelsjön",
+        url="/badplatser-och-badvatten/kommuner/badplatser-i-norrkopings-kommun/agelsjon.html",
+    ),
 ]
 
 BATH_PLACES_BY_ID = {place.id: place for place in BATH_PLACES}

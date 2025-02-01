@@ -45,7 +45,9 @@ def index() -> Response:
                     "x-init": "document.getElementById('modals-here').addEventListener('hidden.bs.modal', () => {removeModalContent()})",
                 }
             )[
-                h.div(".container-sm")[h.div(".row")[temp_table_html()]],
+                h.div(".container-sm")[
+                    h.div(".row")[h.div(".col.pt-3")[temp_table_html()]]
+                ],
                 h.div(
                     "#modals-here.modal.modal-blur.fade",
                     style="display:none",
