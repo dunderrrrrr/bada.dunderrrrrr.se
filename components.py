@@ -62,7 +62,7 @@ def map_modal_html(place: BathPlace) -> h.Element:
         h.div(".modal-content")[
             h.div(".modal-header")[h.h5(".modal-title")[place.title]],
             h.div(".modal-body")[
-                h.div("#map", style="height: 100vh; width: auto;"),
+                h.div("#map", style="height: 50vh; width: auto;"),
                 h.script[
                     Markup(f"var map = L.map('map').setView([{lat}, {long}], 13);")
                 ],
