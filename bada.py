@@ -2,7 +2,13 @@ import htpy as h
 from flask import Flask, Response
 from markupsafe import Markup
 
-from components import footer_html, head_html, map_modal_html, temp_table_html
+from components import (
+    footer_html,
+    head_html,
+    map_modal_html,
+    spinner_html,
+    temp_table_html,
+)
 from constants import BATH_PLACES_BY_ID
 
 
@@ -17,9 +23,13 @@ def temp(id: int) -> Response:
         return Response(status=404)
 
     temperature = place.temperature
+    has_warning = place.has_warning
 
     if not temperature:
         temperature = "-"
+
+    if has_warning:
+        temperature = f"⚠️ {temperature}"
 
     return Response(temperature)
 
@@ -41,7 +51,7 @@ def index() -> Response:
             head_html(),
             h.body(
                 {
-                    "x-data": "{removeModalContent() {document.getElementById('modals-here').innerHTML = ''}}",
+                    "x-data": '{removeModalContent() {document.getElementById(\'modals-here\').innerHTML = \'<div class="modal-dialog modal-dialog-centered"><div class="modal-content p-5"><div class="spinner-border spinner-border-sm" role="status"></div></div></div>\'}}',
                     "x-init": "document.getElementById('modals-here').addEventListener('hidden.bs.modal', () => {removeModalContent()})",
                 }
             )[
@@ -60,9 +70,9 @@ def index() -> Response:
                     tab_index="-1",
                 )[
                     h.div(
-                        ".modal-dialog.modal-lg.modal-dialog-centered",
+                        ".modal-dialog.modal-dialog-centered",
                         role="document",
-                    )[h.div(".modal-content")]
+                    )[h.div(".modal-content.p-5")[spinner_html()]]
                 ],
             ],
         ],

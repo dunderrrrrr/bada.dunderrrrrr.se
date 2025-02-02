@@ -65,6 +65,20 @@ def map_modal_html(place: BathPlace) -> h.Element:
         h.div(".modal-content")[
             h.div(".modal-header")[h.h5(".modal-title")[place.title]],
             h.div(".modal-body")[
+                h.div(".alert.alert-warning", role="alert")[
+                    h.div(".alert-body")[
+                        h.div(".alert-heading")[h.h5(".alert-title")["Varning!"]],
+                        h.div(".alert-text")[
+                            h.p[
+                                "Havs- och vattenmyndigheten har publicerat en varning gällande denna badplats. ",
+                                h.a(href=f"https://www.havochvatten.se{place.url}")[
+                                    "Läs mer här"
+                                ],
+                                ".",
+                            ]
+                        ],
+                    ]
+                ],
                 h.div("#map", style="height: 50vh; width: auto;"),
                 h.script[
                     Markup(f"var map = L.map('map').setView([{lat}, {long}], 13);")
@@ -72,9 +86,7 @@ def map_modal_html(place: BathPlace) -> h.Element:
                 h.script[
                     Markup(
                         """
-                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        }).addTo(map);
+                        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
                     """
                     )
                 ],

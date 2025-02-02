@@ -6,6 +6,17 @@ from dataclasses import dataclass
 BASE_URL = "https://www.havochvatten.se"
 
 
+def _get_soup(url):
+    try:
+        response = httpx.get(url)
+        response.raise_for_status()
+    except httpx.HTTPError as e:
+        return None
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    return soup
+
+
 @dataclass
 class BathPlace:
     id: int
@@ -13,14 +24,7 @@ class BathPlace:
     url: str
 
     def _get_temperature(self) -> str | None:
-        try:
-            response = httpx.get(BASE_URL + self.url)
-            response.raise_for_status()
-        except httpx.HTTPError as e:
-            return None
-
-        soup = BeautifulSoup(response.text, "html.parser")
-        self.soup = soup
+        soup = _get_soup(BASE_URL + self.url)
 
         weather_elem = soup.find("div", id="Vaderprognos")
         graph = weather_elem.find_next_sibling("div")
@@ -33,7 +37,9 @@ class BathPlace:
 
     @property
     def coordinates(self) -> tuple[float, float]:
-        json_element = self.soup.find("script", {"type": "application/ld+json"})
+        soup = _get_soup(BASE_URL + self.url)
+
+        json_element = soup.find("script", {"type": "application/ld+json"})
         json_data = json.loads(json_element.string)
         lat = json_data["geo"]["latitude"]
         long = json_data["geo"]["longitude"]
@@ -42,6 +48,14 @@ class BathPlace:
     @property
     def temperature(self) -> str | None:
         return self._get_temperature()
+
+    @property
+    def has_warning(self) -> bool:
+        soup = _get_soup(BASE_URL + self.url)
+        warning_element = soup.find(
+            "article", {"class": "bathing-place-dissuasion-card"}
+        )
+        return warning_element is not None
 
 
 BATH_PLACES = [
