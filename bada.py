@@ -1,6 +1,8 @@
+import os
 import htpy as h
+import sentry_sdk
+from dotenv import load_dotenv
 from flask import Flask, Response
-from markupsafe import Markup
 
 from components import (
     footer_html,
@@ -11,6 +13,9 @@ from components import (
 )
 from constants import BATH_PLACES_BY_ID
 
+load_dotenv()
+
+sentry_sdk.init(dsn=os.getenv("SENTRY_DSN"), send_default_pii=True)
 
 app = Flask(__name__, static_url_path="", static_folder="static")
 

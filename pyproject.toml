@@ -10,4 +10,6 @@ dependencies = [
     "gunicorn>=23.0.0",
     "htpy>=25.2.0",
     "httpx>=0.28.1",
+    "python-dotenv>=1.0.1",
+    "sentry-sdk[flask]>=2.20.0",
 ]
