@@ -1,8 +1,8 @@
 import htpy as h
+from flask import url_for
+from markupsafe import Markup
 
 from constants import BATH_PLACES, BathPlace
-from markupsafe import Markup
-from flask import url_for
 
 
 def head_html() -> h.Element:
@@ -65,7 +65,7 @@ def map_modal_html(place: BathPlace) -> h.Element:
         h.div(".modal-content")[
             h.div(".modal-header")[h.h5(".modal-title")[place.title]],
             h.div(".modal-body")[
-                h.div(".alert.alert-warning", role="alert")[
+                place.has_warning and h.div(".alert.alert-warning", role="alert")[
                     h.div(".alert-body")[
                         h.div(".alert-heading")[h.h5(".alert-title")["Varning!"]],
                         h.div(".alert-text")[
