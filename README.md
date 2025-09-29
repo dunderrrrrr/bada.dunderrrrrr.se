@@ -7,3 +7,6 @@
 `devenv` sköter allting som har med dependencies att göra.
 
 Starta servern med `run-server`.
+
+
+test
